@@ -18,7 +18,7 @@ from .helper.ext_utils.bot_utils import get_readable_file_size, get_readable_tim
 from .helper.telegram_helper.filters import CustomFilters
 from .modules import authorize, list, cancel_mirror, mirror_status, mirror, clone, watch, shell, eval, anime, stickers, search, delete, speedtest, usage
 
-now=datetime.now(pytz.timezone('Asia/Jakarta'))
+now=datetime.now(pytz.timezone('Asia/Kolkata'))
 
 
 @run_async
@@ -41,8 +41,8 @@ def stats(update, context):
             f'<b>Free:</b> {free}\n\n' \
             f'📊Data Usage📊\n<b>Upload:</b> {sent}\n' \
             f'<b>Download:</b> {recv}\n\n' \
-            f'<b>CPU:</b> {cpuUsage}%\n' \
-            f'<b>RAM:</b> {memory}%\n' \
+            f'<b>CPU:</b> {cpuUsage}% | ' \
+            f'<b>RAM:</b> {memory}% | ' \
             f'<b>DISK:</b> {disk}%'
     update.effective_message.reply_photo(IMAGE_URL, stats, parse_mode=ParseMode.HTML)
 
@@ -66,8 +66,8 @@ def chat_list(update, context):
 @run_async
 def repo(update, context):
     button = [
-    [InlineKeyboardButton("Repo", url=f"https://github.com/breakdowns/slam-mirrorbot")],
-    [InlineKeyboardButton("Support Group", url=f"https://t.me/SlamMirrorSupport")]]
+    [InlineKeyboardButton("Repo", url=f"https://github.com")],
+    [InlineKeyboardButton("Support Group", url=f"https://t.me/GDriveMirror")]]
     reply_markup = InlineKeyboardMarkup(button)
     update.effective_message.reply_photo(IMAGE_URL, reply_markup=reply_markup)
 
@@ -99,41 +99,39 @@ def log(update, context):
 @run_async
 def bot_help(update, context):
     help_string = f'''
-/{BotCommands.HelpCommand}: To get this message
+/{BotCommands.HelpCommand}: To get this message.
 
-/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive
+/{BotCommands.MirrorCommand} [download_url][magnet_link]: Start mirroring the link to google drive.\nPlzzz read this for full use of this command https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20
 
-/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to google drive
+/{BotCommands.UnzipMirrorCommand} [download_url][magnet_link]: Starts mirroring and if downloaded file is any archive, extracts it to google drive.
 
-/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download
+/{BotCommands.TarMirrorCommand} [download_url][magnet_link]: Start mirroring and upload the archived (.tar) version of the download.
 
-/{BotCommands.CloneCommand}: Copy file/folder to google drive
+/{BotCommands.CloneCommand}: Copy file/folder to google drive.
 
 /{BotCommands.WatchCommand} [youtube-dl supported link]: Mirror through youtube-dl. Click /{BotCommands.WatchCommand} for more help.
 
-/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading
+/{BotCommands.TarWatchCommand} [youtube-dl supported link]: Mirror through youtube-dl and tar before uploading.
 
-/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled
+/{BotCommands.CancelMirror}: Reply to the message by which the download was initiated and that download will be cancelled.
 
-/{BotCommands.StatusCommand}: Shows a status of all the downloads
+/{BotCommands.StatusCommand}: Shows a status of all the downloads.
 
-/{BotCommands.ListCommand} [search term]: Searches the search term in the Google drive, if found replies with the link
+/{BotCommands.ListCommand} [search term]: Searches the search term in the Google drive, if found replies with the link.
 
-/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on
+/{BotCommands.StatsCommand}: Show Stats of the machine the bot is hosted on.
 
-/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot (Can only be invoked by owner of the bot)
+/{BotCommands.AuthorizeCommand}: Authorize a chat or a user to use the bot. (Can only be invoked by owner of the bot)
 
-/{BotCommands.AuthListCommand}: See Authorized list (Can only be invoked by owner of the bot)
+/{BotCommands.AuthListCommand}: See Authorized list. (Can only be invoked by owner of the bot)
 
 /{BotCommands.LogCommand}: Get a log file of the bot. Handy for getting crash reports
 
-/{BotCommands.UsageCommand}: To see Heroku Dyno Stats (Owner only).
+/{BotCommands.UsageCommand}: To see Heroku Dyno Stats. (Owner only)
 
-/{BotCommands.SpeedCommand}: Check Internet Speed of the Host
+/{BotCommands.SpeedCommand}: Check Internet Speed of the Host.
 
 /{BotCommands.RepoCommand}: Get the bot repo.
-
-/tshelp: Get help for torrent search module.
 
 /weebhelp: Get help for anime, manga and character module.
 
