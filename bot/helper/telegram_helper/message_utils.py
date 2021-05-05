@@ -3,6 +3,8 @@ from telegram.message import Message
 from telegram.update import Update
 import psutil, shutil
 import time
+from bot import botStartTime
+from bot.helper.ext_utils.bot_utils import get_readable_time
 from bot import AUTO_DELETE_MESSAGE_DURATION, LOGGER, bot, \
     status_reply_dict, status_reply_dict_lock, download_dict, download_dict_lock
 from bot.helper.ext_utils.bot_utils import get_readable_message, get_readable_file_size, MirrorStatus
@@ -67,13 +69,15 @@ def delete_all_messages():
 
 
 def update_all_messages():
+    currentTime = get_readable_time((time.time() - botStartTime))
     total, used, free = shutil.disk_usage('.')
     used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     msg = get_readable_message()
-    msg += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
-           f" <b>RAM:</b> {psutil.virtual_memory().percent}%" \
-           f" <b>DISK:</b> {psutil.disk_usage('/').percent}%"
+    msg += f"<b>Bot Uptime:</b> {currentTime}\n" \
+           f"<b>CPU:</b> {psutil.cpu_percent()}% | " \
+           f"<b>RAM:</b> {psutil.virtual_memory().percent}% | " \
+           f"<b>DISK:</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0
@@ -105,13 +109,15 @@ def update_all_messages():
 
 
 def sendStatusMessage(msg, bot):
+    currentTime = get_readable_time((time.time() - botStartTime))
     total, used, free = shutil.disk_usage('.')
     used = get_readable_file_size(used)
     free = get_readable_file_size(free)
     progress = get_readable_message()
-    progress += f"<b>CPU:</b> {psutil.cpu_percent()}%" \
-           f" <b>RAM:</b> {psutil.virtual_memory().percent}%" \
-           f" <b>DISK:</b> {psutil.disk_usage('/').percent}%"
+    progress += f"<b>Bot Uptime:</b> {currentTime}\n" \
+           f"<b>CPU:</b> {psutil.cpu_percent()}% | " \
+           f"<b>RAM:</b> {psutil.virtual_memory().percent}% | " \
+           f"<b>DISK:</b> {psutil.disk_usage('/').percent}%"
     with download_dict_lock:
         dlspeed_bytes = 0
         uldl_bytes = 0
