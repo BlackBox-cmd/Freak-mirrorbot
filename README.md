@@ -206,12 +206,12 @@ mirror - Start Mirroring
 tarmirror - Upload tar (zipped) file
 unzipmirror - Extract files
 clone - copy file/folder to drive
-watch - mirror YT-DL support link
-tarwatch - mirror youtube playlist link as tar
+yt - mirror YT-DL support link
+ytzip - mirror youtube playlist link as tar
 cancel - Cancel a task
 cancelall - Cancel all tasks
-del - Delete file from Drive
-list - [query] searches files in G-Drive
+d - Delete file from Drive
+look - [query] searches files in G-Drive
 status - Get Mirror Status message
 stats - Bot Usage Stats
 help - Get Detailed Help
