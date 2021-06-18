@@ -317,7 +317,7 @@ class GoogleDriveHelper:
             if meta.get("mimeType") == self.__G_DRIVE_DIR_MIME_TYPE:
                 dir_id = self.create_directory(meta.get('name'), parent_id)
                 result = self.cloneFolder(meta.get('name'), meta.get('name'), meta.get('id'), dir_id)
-                msg += f'<b>🚀 Filename: </b><code>{meta.get("name")}</code>\n<b>🧪 Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>\n\n<i>Do not share the Index Link Outside This Group!</i>\n#clone @GDriveMirror'
+                msg += f'<b>🚀 Filename: </b><code>{meta.get("name")}</code>\n<b>🧪 Size: </b><code>{get_readable_file_size(self.transferred_size)}</code>\n\n<i>Do not share the Index Link Outside This Group!</i>\n Or Freak will Hunt you down! @FreakCloud'
                 durl = self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL.format(dir_id)
                 buttons = button_build.ButtonMaker()
                 if SHORTENER is not None and SHORTENER_API is not None:
@@ -350,7 +350,7 @@ class GoogleDriveHelper:
                 else:
                     buttons.buildbutton("☁️Drive Link☁️", durl)
                 try:
-                    msg += f'\n<b>🧪 Size: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n<i>Do not share the Index Link Outside This Group!</i>\n#clone @GDriveMirror'
+                    msg += f'\n<b>🧪 Size: </b><code>{get_readable_file_size(int(meta.get("size")))}</code>\n\n<i>Do not share the Index Link Outside This Group!</i>\n Or Freak will Hunt you down! @FreakCloud'
                 except TypeError:
                     pass
                 if INDEX_URL is not None:
@@ -480,9 +480,9 @@ class GoogleDriveHelper:
                     content += f'<b> | <a href="https://telegra.ph/{self.path[nxt_page]}">Next</a></b>'
                     nxt_page += 1
             Telegraph(access_token=telegraph_token).edit_page(path = self.path[prev_page],
-                                 title = 'GDrive Mirror Bot - Search',
-                                 author_name='Agamya Samuel',
-                                 author_url='https://youtube.com/agamyasamuel',
+                                 title = 'Freak Mirror Bot - Search',
+                                 author_name='Freak Cloud',
+                                 author_url='https://t.me/FreakCloud',
                                  html_content=content)
         return
 
@@ -559,9 +559,9 @@ class GoogleDriveHelper:
 
             for content in self.telegraph_content :
                 self.path.append(Telegraph(access_token=telegraph_token).create_page(
-                                                        title = 'GDrive Mirror Bot Search',
-                                                        author_name='Agamya Samuel',
-                                                        author_url='https://youtube.com/agamyasamuel',
+                                                        title = 'Freak Mirror Bot Search',
+                                                        author_name='Freak Cloud',
+                                                        author_url='https://t.me/FreakCloud',
                                                         html_content=content
                                                         )['path'])
 
