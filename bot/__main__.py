@@ -67,7 +67,7 @@ def chat_list(update, context):
 def repo(update, context):
     button = [
     [InlineKeyboardButton("Repo", url=f"https://github.com")],
-    [InlineKeyboardButton("Support Group", url=f"https://t.me/GDriveMirror")]]
+    [InlineKeyboardButton("Support Group", url=f"https://t.me/FreakCloud")]]
     reply_markup = InlineKeyboardMarkup(button)
     update.effective_message.reply_photo(IMAGE_URL, reply_markup=reply_markup)
 
