@@ -1,6 +1,6 @@
-[![Slam](https://telegra.ph/file/db03910496f06094f1f7a.jpg)](https://youtu.be/Pk_TthHfLeE)
+[![Freak](https://telegra.ph/file/8a59e9b8754ceed0c7a0e.png)](https://youtu.be/RgKAFK5djSk)
 
-# Slam Mirror Bot
+# Freak Mirror Bot
 This is a telegram bot writen in python for mirroring files on the internet to our beloved Google Drive.
 
 # Features supported:
@@ -47,7 +47,7 @@ Deploying is pretty much straight forward and is divided into several steps as f
 
 - Clone this repo:
 ```
-git clone https://github.com/breakdowns/slam-mirrorbot mirrorbot/
+git clone https://github.com/BlackBox-cmd/Freak-mirrorbot
 cd mirrorbot
 ```
 
@@ -91,7 +91,7 @@ Like this : "-184943414 110343323 894432323"
 - **AUTO_DELETE_MESSAGE_DURATION**: Interval of time (in seconds), after which the bot deletes it's message (and command message) which is expected to be viewed instantly. Note: Set to -1 to never automatically delete messages
 - **IS_TEAM_DRIVE**: (Optional field) Set to `True` if GDRIVE_FOLDER_ID is from a Team Drive else False or Leave it empty.
 - **USE_SERVICE_ACCOUNTS**: (Optional field) (Leave empty if unsure) Whether to use service accounts or not. For this to work see "Using service accounts" section below.
-- **INDEX_URL**: (Optional field) Refer to https://github.com/maple3142/GDIndex/ The URL should not have any trailing '/'
+- **INDEX_URL**: (Optional field) Refer to https://github.com/BlackBox-cmd/Google-Drive-Index The URL should not have any trailing '/'
 - **API_KEY**: This is to authenticate to your telegram account for downloading Telegram files. You can get this from https://my.telegram.org DO NOT put this in quotes.
 - **API_HASH**: This is to authenticate to your telegram account for downloading Telegram files. You can get this from https://my.telegram.org
 - **MEGA_KEY**: Mega.nz api key to mirror mega.nz links. Get it from [Mega SDK Page](https://mega.nz/sdk)
@@ -258,7 +258,7 @@ machine host login username password my_youtube_password
 where host is the name of extractor (eg. youtube, twitch). Multiple accounts of different hosts can be added each separated by a new line
 
 # Support Group
-<p><a href="https://t.me/SlamMirrorSupport"> <img src="https://img.shields.io/badge/Slam%20Mirror%20Support-black?style=for-the-badge&logo=telegram" width="230""/></a></p>
+<p><a href="https://t.me/FreakCloud"> <img src="https://img.shields.io/badge/Freak%20Mirror%20Support-black?style=for-the-badge&logo=telegram" width="230""/></a></p>
 
 # Credits
 
@@ -269,4 +269,4 @@ Thanks to:
 - [magneto261290](https://github.com/magneto261290/) for some features
 - [SVR666](https://github.com/SVR666/) for some features & fixes
 
-and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/breakdowns/slam-mirrorbot/graphs/contributors).
+and many more people who aren't mentioned here, but may be found in [Contributors](https://github.com/BlackBox-cmd/Freak-mirrorbot/graphs/contributors).
