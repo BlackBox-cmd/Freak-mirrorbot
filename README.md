@@ -1,5 +1,6 @@
 [![Freak](https://telegra.ph/file/8a59e9b8754ceed0c7a0e.png)](https://youtu.be/RgKAFK5djSk)
 
+#This Repo is dead 😢
 # Freak Mirror Bot
 This is a telegram bot writen in python for mirroring files on the internet to our beloved Google Drive.
 
